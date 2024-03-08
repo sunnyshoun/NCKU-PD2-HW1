@@ -89,7 +89,7 @@ public class RegExp {
                 System.out.print(mystr.IsPalindrome()+',');
                 System.out.print(mystr.IsSub(str1)+',');
                 System.out.print(mystr.IsContainNum(str2, s2Count)+',');
-                System.out.print(mystr.amXb2m());
+                System.out.println(mystr.amXb2m());
             }
             reader.close();
 
