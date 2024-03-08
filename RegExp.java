@@ -52,17 +52,16 @@ class MyString{
     public String amXb2m(){
         int a_show_times = 0;
         int b_show_times = 0;
-        int i = 0;
-        while(a_show_times < 1 || b_show_times < 2){
+        for(char c : this.str_arr){
+            if(a_show_times+b_show_times == 3) return "Y";
             if(a_show_times == 0){
-                if(this.str_arr[i] == 'a') a_show_times = 1;
+                if(c == 'a') a_show_times = 1;
             }
             else{
-                if(this.str_arr[i] == 'b') b_show_times++;
+                if(c == 'b') b_show_times++;
             }
-            i++;
         }
-        return (a_show_times+b_show_times == 3) ? "Y":"N";
+        return "N";
     }
 }
 
