@@ -8,7 +8,7 @@ class MyString{
 
     MyString(String s){
         this.str = s.toLowerCase();
-        this.str_arr = s.toCharArray();
+        this.str_arr = this.str.toCharArray();
     }
 
     private String GetSubstring(String s, int start, int end){
@@ -21,7 +21,7 @@ class MyString{
     }
 
     public String IsPalindrome(){
-        int str_len = this.str.length();
+        int str_len = this.str_arr.length;
         for(int i=0;i<str_len/2;i++){
             if(this.str_arr[i] != this.str_arr[str_len-i-1]){
                 return "N";
@@ -31,7 +31,7 @@ class MyString{
     }
 
     public String IsSub(String s){
-        for(int i=0;i<this.str.length()-s.length()+1;i++){
+        for(int i=0;i<this.str_arr.length-s.length()+1;i++){
             if(this.GetSubstring(str, i, i+s.length()).equals(s)){
                 return "Y";
             }
@@ -59,6 +59,7 @@ class MyString{
             }
             else{
                 if(c == 'b') b_show_times++;
+                else b_show_times = 0;
             }
         }
         return "N";
