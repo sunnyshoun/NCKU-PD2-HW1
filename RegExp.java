@@ -69,8 +69,8 @@ class MyString{
 public class RegExp {
     
     public static void main(String[] args) {
-        String str1 = args[1];
-        String str2 = args[2];
+        String str1 = args[1].toLowerCase();
+        String str2 = args[2].toLowerCase();
         int s2Count = Integer.parseInt(args[3]);
 
         //For your testing of input correctness
