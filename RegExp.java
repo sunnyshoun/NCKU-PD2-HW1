@@ -2,63 +2,62 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-class MyString{
+class MyString {
     private String str;
     private char[] str_arr;
 
-    MyString(String s){
+    MyString(String s) {
         this.str = s.toLowerCase();
         this.str_arr = this.str.toCharArray();
     }
 
-    private String GetSubstring(String s, int start, int end){
-        char[] s_arr = s.toCharArray();
+    private String getSubstring(int start, int end) {
         String substr = "";
-        for(int i=start;i<end;i++){
-            substr+=s_arr[i];
+        for (int i = start; i < end; i++) {
+            substr+=this.str_arr[i];
         }
         return substr;
     }
 
-    public String IsPalindrome(){
+    public String IsPalindrome() {
         int str_len = this.str_arr.length;
-        for(int i=0;i<str_len/2;i++){
-            if(this.str_arr[i] != this.str_arr[str_len-i-1]){
+        for (int i = 0; i < str_len/2; i++) {
+            if(this.str_arr[i] != this.str_arr[str_len-i-1]) {
                 return "N";
             }
         }
         return "Y";
     }
 
-    public String IsSub(String s){
-        for(int i=0;i<this.str_arr.length-s.length()+1;i++){
-            if(this.GetSubstring(str, i, i+s.length()).equals(s)){
+    public String IsSub(String s) {
+        for (int i = 0; i < this.str_arr.length-s.length()+1; i++) {
+            if (this.getSubstring(i, i+s.length()).equals(s)) {
                 return "Y";
             }
         }
         return "N";
     }
 
-    public String IsContainNum(String s, int n){
+    public String IsContainNum(String s, int n) {
         int show_times = 0;
-        for(int i=0;i<this.str.length()-s.length()+1;i++){
-            if(this.GetSubstring(str, i, i+s.length()).equals(s)){
+        for (int i = 0; i < this.str.length()-s.length()+1; i++) {
+            if (this.getSubstring(i, i+s.length()).equals(s)) {
                 show_times += 1;
             }
         }
         return (show_times >= n) ? "Y":"N";
     }
 
-    public String amXb2m(){
+    public String amXb2m() {
         int a_show_times = 0;
         int b_show_times = 0;
-        for(char c : this.str_arr){
-            if(a_show_times+b_show_times == 3) return "Y";
-            if(a_show_times == 0){
-                if(c == 'a') a_show_times = 1;
+        for (char c : this.str_arr) {
+            if (a_show_times+b_show_times == 3) return "Y";
+            if (a_show_times == 0) {
+                if (c == 'a') a_show_times = 1;
             }
-            else{
-                if(c == 'b') b_show_times++;
+            else {
+                if (c == 'b') b_show_times++;
                 else b_show_times = 0;
             }
         }
