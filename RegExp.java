@@ -52,7 +52,6 @@ class MyString {
         int a_show_times = 0;
         int b_show_times = 0;
         for (char c : this.str_arr) {
-            if (a_show_times+b_show_times == 3) return "Y";
             if (a_show_times == 0) {
                 if (c == 'a') a_show_times = 1;
             }
@@ -60,6 +59,7 @@ class MyString {
                 if (c == 'b') b_show_times++;
                 else b_show_times = 0;
             }
+            if (a_show_times+b_show_times == 3) return "Y";
         }
         return "N";
     }
